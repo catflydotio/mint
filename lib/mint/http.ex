@@ -301,6 +301,11 @@ defmodule Mint.HTTP do
       seconds), and may be overridden by the caller. Set to `:infinity` to
       disable the connect timeout.
 
+    * `:inet6` - defaults to `false` and may be overridden by the caller to 
+      enable IPv6 support. When set to `true`, Mint tries an IPv6 connection 
+      first and falls back to the defaults provided by `:ssl`/`:gen_tcp` if 
+      connection fails.
+
   Options for `:https` only:
 
     * `:alpn_advertised_protocols` - managed by Mint. Cannot be overridden.
